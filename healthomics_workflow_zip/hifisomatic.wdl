@@ -1,5 +1,6 @@
 version 1.0
 
+# import "structs.wdl"
 import "alignment.wdl" as alignment
 import "clairs.wdl" as clairs
 import "cnvkit.wdl" as cnvkit
@@ -12,16 +13,37 @@ import "prioritization.wdl" as prioritization
 import "clonality.wdl" as clonality
 import "deepsomatic.wdl" as deepsomatic
 
+struct Sample {
+    String sample_names
+    Array[File] normal_bams
+    Array[File] tumor_bams
+}
+
+struct TumorOnlySample {
+    String sample_names
+    Array[File] tumor_bams
+}
+
+struct TumorOnlyCohort{
+    Array[TumorOnlySample] samples
+}
+
+struct Cohort {
+    Array[Sample] samples
+}
+
+struct IndexData {
+  File data
+  File data_index
+}
+
 workflow hifisomatic {
   input {
-    Array[String] sample_names
-    Array[Array[File]] tumor_bam_files
-    Array[Array[File]] normal_bam_files
+    Cohort cohort
     # Files are not aligned by default. If aligned, set skip_align to true
     Boolean skip_align = false
     # Strip kinetics or not
     Boolean strip_kinetics = false
-    String reference_version
     File ref_fasta
     File ref_fasta_dict
     File ref_gff
@@ -91,10 +113,10 @@ workflow hifisomatic {
     File? report_vis_script
   }
 
-  scatter (i in range(length(sample_names))) {
-    String sample = sample_names[i]
-    Array[File] sample_tumor_bam_files = tumor_bam_files[i]
-    Array[File] sample_normal_bam_files = normal_bam_files[i]
+  scatter (case in cohort.samples) {
+    String sample = case.sample_names
+    Array[File] sample_tumor_bam_files = case.tumor_bams
+    Array[File] sample_normal_bam_files = case.normal_bams
     File ref_to_use = select_first([ref_fasta_mmi, ref_fasta])
 
     # New naming convention time! "Individual" is "clone_unit", these are the seperate objects within cohort.sample array. 

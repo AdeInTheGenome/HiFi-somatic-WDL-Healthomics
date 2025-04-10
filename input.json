@@ -1,0 +1,42 @@
+{
+  "cohort": {
+    "samples": [ 
+      {
+        "sample_names": "test_patient1",
+        "tumor_bams": [
+          "s3://srs-poc-test/pacbio-somatic-wdl/COLO829_tumor/m84039_230328_000836_s3.hifi_reads.bc2025.bam"
+        ],
+        "normal_bams": [
+          "s3://srs-poc-test/pacbio-somatic-wdl/COLO829-BL_normal/m84039_230327_233730_s2.hifi_reads.bc2007.bam"
+        ]
+      },
+      {
+        "sample_names": "test_patient2",
+        "tumor_bams": [
+          "s3://srs-poc-test/pacbio-somatic-wdl/COLO829_tumor/m84039_230312_025934_s1.hifi_reads.bc2026.bam"
+        ],
+        "normal_bams": [
+          "s3://srs-poc-test/pacbio-somatic-wdl/COLO829-BL_normal/m84039_230327_230708_s1.hifi_reads.bc2007.bam"
+        ]
+      }
+    ]
+  },
+  "ref_fasta": "s3://srs-poc-test/pacbio-somatic-wdl/resources/GCA_000001405.15_GRCh38_no_alt_analysis_set_maskedGRC_exclusions_v2.fasta",
+  "ref_fasta_index": "s3://srs-poc-test/pacbio-somatic-wdl/resources/GCA_000001405.15_GRCh38_no_alt_analysis_set_maskedGRC_exclusions_v2.fasta.fai",
+  "ref_fasta_dict": "s3://srs-poc-test/pacbio-somatic-wdl/resources/GCA_000001405.15_GRCh38_no_alt_analysis_set_maskedGRC_exclusions_v2.dict",
+  "ref_gff": "s3://srs-poc-test/pacbio-somatic-wdl/resources/ensembl.GRCh38.101.reformatted.gff3.gz",
+  "ref_bed": "s3://srs-poc-test/pacbio-somatic-wdl/resources/human_GRCh38_no_alt_analysis_set.trf.bed",
+  "cnvkit_refflat": "s3://srs-poc-test/pacbio-somatic-wdl/resources/refFlat.hg38.txt",
+  "cnvkit_threads": 8,
+  "pbmm2_threads": 24,
+  "merge_bam_threads": 4,
+  "cpg_pileup_threads": 8,
+  "samtools_threads": 8,
+  "clairs_threads": 16,
+  "clairs_platform": "hifi_revio",
+  "sv_threads": 8,
+  "trf_bed": "s3://srs-poc-test/pacbio-somatic-wdl/resources/human_GRCh38_no_alt_analysis_set.trf.bed",
+  "call_small_variants": true,
+  "strip_kinetics": false,
+  "use_deepsomatic": true
+}
