@@ -165,8 +165,11 @@ task wakhan {
     File ref_fasta
     File ref_fasta_index
     File severus_sv_vcf
+    File severus_sv_vcf_index
     File? normal_germline_vcf
+    File? normal_germline_vcf_index
     File tumor_germline_vcf
+    File tumor_germline_vcf_index
     Int threads = 16
     String purity_range = "0.2-1.0"
     String ploidy_range = "1-6"
