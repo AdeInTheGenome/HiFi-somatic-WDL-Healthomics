@@ -382,8 +382,11 @@ workflow hifisomatic {
           ref_fasta = ref_fasta,
           ref_fasta_index = ref_fasta_index,
           severus_sv_vcf = select_first([phased_severus.output_vcf]),
+          severus_sv_vcf_index = select_first([phased_severus.output_vcf_index]),
           normal_germline_vcf = phaseNormalBam.hiphase_vcf,
+          normal_germline_vcf_index = phaseNormalBam.hiphase_vcf_index,
           tumor_germline_vcf = select_first([phaseTumorBam.hiphase_vcf]),
+          tumor_germline_vcf_index = select_first([phaseTumorBam.hiphase_vcf_index]),
           threads = wakhan_threads
       }
 
