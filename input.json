@@ -1,0 +1,45 @@
+{
+  "cohort": {
+    "patients": [ 
+      {
+        "patient_names": "test_patient1",
+        "tumor_bams": [
+          "s3://srs-poc-test/omics-test-ade/git-test/6775243/out/tumor_bams/0/m84039_230328_000836_s3.hifi_reads.bc2025.aligned.bam"
+        ],
+        "normal_bams": [
+          "s3://srs-poc-test/omics-test-ade/git-test/6775243/out/normal_bams/0/m84039_230327_233730_s2.hifi_reads.bc2007.aligned.bam"
+        ]
+      },
+      {
+        "patient_names": "test_patient2",
+        "tumor_bams": [
+          "s3://srs-poc-test/omics-test-ade/git-test/6775243/out/tumor_bams/1/m84039_230312_025934_s1.hifi_reads.bc2026.aligned.bam"
+        ],
+        "normal_bams": [
+          "s3://srs-poc-test/omics-test-ade/git-test/6775243/out/normal_bams/1/m84039_230327_230708_s1.hifi_reads.bc2007.aligned.bam"
+        ]
+      }
+    ]
+  },
+  "ref_fasta": "s3://srs-poc-test/pacbio-somatic-wdl/resources/GCA_000001405.15_GRCh38_no_alt_analysis_set_maskedGRC_exclusions_v2.fasta",
+  "ref_fasta_index": "s3://srs-poc-test/pacbio-somatic-wdl/resources/GCA_000001405.15_GRCh38_no_alt_analysis_set_maskedGRC_exclusions_v2.fasta.fai",
+  "ref_fasta_dict": "s3://srs-poc-test/pacbio-somatic-wdl/resources/GCA_000001405.15_GRCh38_no_alt_analysis_set_maskedGRC_exclusions_v2.dict",
+  "ref_gff": "s3://srs-poc-test/pacbio-somatic-wdl/resources/ensembl.GRCh38.101.reformatted.gff3.gz",
+  "ref_bed": "s3://srs-poc-test/pacbio-somatic-wdl/resources/human_GRCh38_no_alt_analysis_set.trf.bed",
+  "control_vcf":"s3://srs-poc-test/pacbio-somatic-wdl/resources/severus.jasmine.AN10.AC4.nosample.vcf.gz",
+  "control_vcf_index":"s3://srs-poc-test/pacbio-somatic-wdl/resources/severus.jasmine.AN10.AC4.nosample.vcf.gz.tbi",
+  "cnvkit_refflat": "s3://srs-poc-test/pacbio-somatic-wdl/resources/refFlat.hg38.txt",
+  "cnvkit_threads": 8,
+  "pbmm2_threads": 24,
+  "merge_bam_threads": 4,
+  "cpg_pileup_threads": 8,
+  "samtools_threads": 8,
+  "clairs_threads": 16,
+  "clairs_platform": "hifi_revio",
+  "sv_threads": 8,
+  "trf_bed": "s3://srs-poc-test/pacbio-somatic-wdl/resources/human_GRCh38_no_alt_analysis_set.trf.bed",
+  "call_small_variants": true,
+  "strip_kinetics": false,
+  "use_deepsomatic": true,
+  "skip_align": true
+}

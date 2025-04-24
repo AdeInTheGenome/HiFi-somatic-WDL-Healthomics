@@ -1,0 +1,102 @@
+{
+  "cohort":{
+    "description": "Array of patient information including tumor and normal BAM files",
+      "optional": false
+  },
+  "ref_fasta": {
+    "description": "Reference FASTA file",
+    "optional": false
+  },
+  "ref_fasta_index": {
+    "description": "Index of the reference FASTA file",
+    "optional": false
+  },
+  "ref_fasta_dict": {
+    "description": "Dictionary file for the reference FASTA",
+    "optional": false
+  },
+  "ref_gff": {
+    "description": "Reference GFF3 annotation file",
+    "optional": false
+  },
+  "ref_bed": {
+    "description": "Reference BED file",
+    "optional": false
+  },
+  "control_vcf": {
+    "description": "Control VCF file",
+    "optional": false
+  },
+  "control_vcf_index": {
+    "description": "Index for the control VCF file",
+    "optional": false
+  },
+  "cnvkit_refflat": {
+    "description": "RefFlat file for CNVkit",
+    "optional": false
+  },
+  "cnvkit_threads": {
+    "description": "Number of threads for CNVkit",
+    "optional": false
+  },
+  "pbmm2_threads": {
+    "description": "Number of threads for pbmm2",
+    "optional": false
+  },
+  "merge_bam_threads": {
+    "description": "Number of threads for merging BAM files",
+    "optional": false
+  },
+  "cpg_pileup_threads": {
+    "description": "Number of threads for CpG pileup",
+    "optional": false
+  },
+  "samtools_threads": {
+    "description": "Number of threads for Samtools",
+    "optional": false
+  },
+  "clairs_threads": {
+    "description": "Number of threads for ClairS",
+    "optional": false
+  },
+  "clairs_platform": {
+    "description": "Platform for ClairS variant calling. Default: hifi_revio. Can also be hifi_sequel2",
+    "optional": false
+  },
+  "sv_threads": {
+    "description": "Number of threads for structural variant calling",
+    "optional": false
+  },
+  "trf_bed": {
+    "description": "BED file for tandem repeat filtering. Optional but recommended",
+    "optional": true
+  },
+  "call_small_variants": {
+    "description": "Enable small variant calling. Default TRUE",
+    "optional": true
+  },
+  "strip_kinetics": {
+    "description": "Strip kinetics or not. TRUE/FALSE",
+    "optional": false
+  },
+  "vep_cache": {
+    "description": "VEP cache file",
+    "optional": true
+  },
+  "annotsv_cache": {
+    "description": "AnnotSV cache file",
+    "optional": true
+  },
+  "ensembl_data_dir_tarball": {
+    "description": "Ensembl data directory tarball",
+    "optional": true
+  },
+  "use_deepsomatic": {
+    "description": "Use DeepSomatic for small variant calling. TRUE/FALSE. Default is TRUE.",
+    "optional": true
+  },
+  "skip_align": {
+    "description": "Skip alignment steps. Default is FALSE.",
+    "optional": true
+  }
+}
