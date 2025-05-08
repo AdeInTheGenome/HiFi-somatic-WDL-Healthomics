@@ -36,15 +36,16 @@ task hiphase {
         File hiphase_bam = sub(basename(bam), "\\.bam$", ".hiphase.bam")
         File hiphase_bam_index = sub(basename(bam), "\\.bam$", ".hiphase.bam.bai")
         File hiphase_vcf = sub(basename(vcf), "\\.vcf.gz$", ".hiphase.vcf.gz")
+        File hiphase_vcf_index = sub(basename(vcf), "\\.vcf.gz$", ".hiphase.vcf.gz.tbi")
         File hiphase_stats = sub(basename(bam), "\\.bam$", ".hiphase.stats")
         File hiphase_summary = sub(basename(bam), "\\.bam$", ".hiphase.summary.tsv")
         Array[File] hiphase_stats_summary = [hiphase_stats, hiphase_summary]
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:hiphase-v1.5.0"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:hiphase-v1.4.5"
         cpu: threads
-        memory: "~{threads * 6} GB"
+        memory: "~{threads * 12} GB"
         disk: file_size + "GB"
         maxRetries: 2
         preemptible: 1
@@ -91,6 +92,7 @@ task hiphase_with_somatic {
         File hiphase_bam = sub(basename(bam), "\\.bam$", ".hiphase.bam")
         File hiphase_bam_index = sub(basename(bam), "\\.bam$", ".hiphase.bam.bai")
         File hiphase_vcf = sub(basename(vcf), "\\.vcf.gz$", ".hiphase.vcf.gz")
+        File hiphase_vcf_index = sub(basename(vcf), "\\.vcf.gz$", ".hiphase.vcf.gz.tbi")        
         File hiphase_somatic_small_variants_vcf = sub(basename(somatic_SNP_indel_vcf), "\\.vcf.gz$", ".hiphase.vcf.gz")
         File hiphase_stats = sub(basename(bam), "\\.bam$", ".hiphase.stats")
         File hiphase_summary = sub(basename(bam), "\\.bam$", ".hiphase.summary.tsv")
@@ -98,9 +100,9 @@ task hiphase_with_somatic {
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:hiphase-v1.5.0"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:hiphase-v1.4.5"
         cpu: threads
-        memory: "~{threads * 6} GB"
+        memory: "~{threads * 12} GB"
         disk: file_size + "GB"
         maxRetries: 2
         preemptible: 1
@@ -164,13 +166,14 @@ task longphase_with_somatic {
         File longphase_bam = sub(basename(bam), "\\.bam$", ".longphase.bam")
         File longphase_bam_index = sub(basename(bam), "\\.bam$", ".longphase.bam.bai")
         File longphase_vcf = sub(basename(vcf), "\\.vcf.gz$", ".longphase.vcf.gz")
+        File longphase_vcf_index = sub(basename(vcf), "\\.vcf.gz$", ".longphase.vcf.gz.tbi")
         File longphase_somatic_small_variants_vcf = sub(basename(somatic_SNP_indel_vcf), "\\.vcf.gz$", ".longphase.vcf.gz")
     }
 
     runtime {
         docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:longphase"
         cpu: threads
-        memory: "~{threads * 6} GB"
+        memory: "~{threads * 12} GB"
         disk: file_size + "GB"
         maxRetries: 2
         preemptible: 1

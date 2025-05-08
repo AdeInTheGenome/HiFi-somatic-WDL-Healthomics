@@ -62,7 +62,7 @@ task prioritize_dmr_intogen {
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic_general_tools"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic-general-tools-v1.3"
         cpu: threads
         memory: "~{threads * 4} GB"
         disk: file_size + " GB"
@@ -104,7 +104,7 @@ task prioritize_sv_intogen {
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic_general_tools"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic-general-tools-v1.3"
         cpu: threads
         memory: "~{threads * 4} GB"
         disk: file_size + " GB"
@@ -147,7 +147,7 @@ task prioritize_small_variants {
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic_general_tools"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic-general-tools-v1.3"
         cpu: threads
         memory: "~{threads * 4} GB"
         disk: file_size + " GB"
@@ -215,7 +215,7 @@ task report_sample {
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic_general_tools"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic-general-tools-v1.3"
         cpu: 8
         memory: "32 GB"
         disk: file_size + " GB"
@@ -276,7 +276,7 @@ task report_sample_TO {
     }
 
     runtime {
-        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic_general_tools"
+        docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:somatic-general-tools-v1.3"
         cpu: 8
         memory: "32 GB"
         disk: file_size + " GB"

@@ -57,7 +57,7 @@ task ClairS {
   }
 
   runtime {
-    docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:clair3"
+    docker: "860660336427.dkr.ecr.us-east-1.amazonaws.com/hifisomatic:clairS-v0.4.1"
     cpu: threads
     memory: "~{threads * 4} GB"
     disk: file_size + " GB"
