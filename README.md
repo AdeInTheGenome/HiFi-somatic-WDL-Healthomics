@@ -15,11 +15,11 @@ Daniels et al., *Somatic Reference Sample Development and Evaluation Using Unedi
 
 ## Purpose of This Fork
 
-The original PacBio HiFi somatic workflow was adapted to meet the benchmarking and orthogonal validation needs of the SRS program.
+The original PacBio HiFi somatic workflow (v0.9) was adapted to meet the benchmarking and orthogonal validation needs of the SRS program.
 
 Primary updates include:
 
-- Integration of **Sentieon TNscope** for long-read somatic SNV/INDEL calling
+- Integration of **Sentieon (v202112.07) TNscope** for long-read somatic SNV/INDEL calling
 - Modifications to support SRS tumor–normal experimental design
 - Parameterization adjustments for AWS HealthOmics execution within the SRS cloud infrastructure
 - Harmonization with SRS short-read pipelines for cross-technology comparison
